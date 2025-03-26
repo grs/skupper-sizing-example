@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-site-small
+  labels:
+    skupper.io/site-sizing: small
+data:
+  router-cpu-request: "0.3"
+  router-cpu-limit: "0.4"
+  router-memory-request: "300M"
+  router-memory-limit: "500M"
+  adaptor-cpu-request: "0.2"
+  adaptor-cpu-limit:   "0.3"
+  adaptor-memory-request: "100M"
+  adaptor-memory-limit:  "200M"
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-site-medium
+  labels:
+    skupper.io/site-sizing: medium
+  annotations:
+    skupper.io/default-site-sizing: ""
+data:
+  router-cpu-request: "0.4"
+  router-cpu-limit: "0.5"
+  router-memory-request: "500M"
+  router-memory-limit: "700M"
+  adaptor-cpu-request: "0.2"
+  adaptor-memory-request: "100M"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skupper-site-large
+  labels:
+    skupper.io/site-sizing: large
+data:
+  router-cpu-request: "2"
+  router-cpu-limit: "4"
+  router-memory-request: "750M"
+  router-memory-limit: "1500M"
+  adaptor-cpu-request: "0.4"
+  adaptor-memory-request: "250M"
+---
